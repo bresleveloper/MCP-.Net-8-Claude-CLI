@@ -90,8 +90,8 @@ WORKDIR /home/coder/workspace
 
 # Expose code-server port
 EXPOSE 8080
-# Expose mcp http
-EXPOSE 8083
+# Expose mcp / api / http
+EXPOSE 8083   8094    8105
 
 
 # Set entrypoint to fix permissions and switch user

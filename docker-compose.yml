@@ -8,12 +8,14 @@ services:                                           # Container definitions star
     ports:                                          # Port mappings
       - "8080:8080"                                 # port for coder
       - "8083:8083"                                 # for for future MCP out
+      - "8094:8094"                                 # for for future MCP out
+      - "8105:8105"                                 # for for future MCP out
     volumes:                                        # Folder/file mappings
       - ./workspace:/home/coder/workspace/local     # Local folder → container
       - ./config:/home/coder/.config                # Local folder for config like passwords, so not at publish
       - workspace-data:/home/coder/workspace/volume # volume folder → container 
       - dotnet-cache:/home/coder/.nuget             # Named volume
-                            # Use docker volume inspect workspace-data to see exact path.
+                            # docker volume inspect mcpdotnet8claude_workspace-data
     environment:                                    # Environment variables
       - PASSWORD=123                                # Code-Server password
       - SUDO_PASSWORD=1234                          # Sudo password inside container

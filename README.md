@@ -10,7 +10,13 @@ this is my attempt to build an independent .Net 8 dev env detached from my compu
 
 ## Instuctions:
 
+CHANGE THE PASSWORDS FOR PRODUCTION!!
+
+
 IN LOCAL FOLDER:
+
+
+
 
 ### build (~5 min)
 
@@ -28,3 +34,17 @@ IN LOCAL FOLDER:
 * `docker-compose build --no-cache` 		=> rebuild without any cashing (if needed)
 
 back to post build
+
+
+
+## start working
+
+* `dotnet new webapi -n TestApiSomething`			=> create an API 
+* `dotnet run --urls http://0.0.0.0:8083`			=> run the api
+* `http://localhost:8083/swagger/index.html`		=> see your api endpoints
+* `http://localhost:8083/weatherforecast`			=> test your api
+
+
+
+
+open port 8080 for coder 8083, 8094, 8105, change in yaml file

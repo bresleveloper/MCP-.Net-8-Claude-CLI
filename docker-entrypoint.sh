@@ -4,6 +4,7 @@ set -e
 # Fix permissions for volume (runs as root)
 chown -R coder:coder /home/coder/workspace/volume 2>/dev/null || true
 chown -R coder:coder /home/coder/.config 2>/dev/null || true
+chown -R coder:coder /home/coder/.local 2>/dev/null || true
 
 # Switch to coder user and execute the command
 exec su coder -c "$(printf '%q ' "$@")"
