@@ -1,6 +1,6 @@
-# MCP-.Net-8-Claude-CLI
+# MCP-.Net-9-Claude-CLI
 
-this is my attempt to build an independent .Net 8 dev env detached from my computer except local folder for whatever like source or DB.
+this is my attempt to build an independent .Net 9 dev env detached from my computer except local folder for whatever like source or DB.
 
 ## TODO 
 * add reamde about the Dockerfile
@@ -35,11 +35,17 @@ IN LOCAL FOLDER:
 
 back to post build
 
+### make new image from running container
+
+* `docker ps`						=> running containers
+* `docker commit -m "Added .NET 9" mcp-codernet8claude-dev mcp-codernet8claude:v1.1`
+* `docker images`					=> verify its there
+
 
 
 ## start working
 
-* open port 8080 for coder 8083, 8094, 8105, change in yaml file
+* open port 8080 for coder 8083, 8094, 8105, 8207, 6277 change in yaml file
 * list ports `docker port mcp-codernet8claude-dev`.
 
 
@@ -51,14 +57,8 @@ back to post build
 * `http://localhost:8083/weatherforecast`			=> test your api
 
 
-
-
-### build http base MCP
-
-* `dotnet new webapi -n TestHttpMCPSomething`		=> create an API 
-* `dotnet run --urls http://0.0.0.0:8094`			=> run the api
-* `http://localhost:8094/swagger/index.html`		=> see your api endpoints
-* `http://localhost:8094/mcp/how-is-ari`			=> test your api [current example copy]
+## CANT RUN MCP LIKE THIS
+too much trouble, maybe another day.
 
 
 
@@ -68,6 +68,7 @@ back to post build
 * `docker volume create n8n_data`  					=> give it a volume to save stuff
 * run it as below									=> read below
 * `http://localhost:5678`							=> browse there and learn n8n
+* `http://host.docker.internal:8094/mcp/`
 
 ```
 docker run -it --rm \

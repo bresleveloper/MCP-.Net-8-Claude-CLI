@@ -24,10 +24,10 @@ RUN apt-get update && apt-get install -y \
 ENV DOTNET_ROOT=/usr/share/dotnet
 ENV PATH="${PATH}:/usr/share/dotnet"
 
-# Install .NET 8 SDK
+# Install .NET 9 SDK
 RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && \
     chmod +x dotnet-install.sh && \
-    ./dotnet-install.sh --channel 8.0 --install-dir /usr/share/dotnet && \
+    ./dotnet-install.sh --channel 9.0 --install-dir /usr/share/dotnet && \
     rm dotnet-install.sh && \
     ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
@@ -91,7 +91,7 @@ WORKDIR /home/coder/workspace
 # Expose code-server port
 EXPOSE 8080
 # Expose mcp / api / http
-EXPOSE 8083   8094    8105
+EXPOSE 8083   8094    8105  8207  6277 
 
 
 # Set entrypoint to fix permissions and switch user

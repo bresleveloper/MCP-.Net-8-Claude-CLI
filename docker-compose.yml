@@ -10,6 +10,8 @@ services:                                           # Container definitions star
       - "8083:8083"                                 # for for future MCP out
       - "8094:8094"                                 # for for future MCP out
       - "8105:8105"                                 # for for future MCP out
+      - "8207:8207"                                 # for for future MCP out
+      - "6277:6277"                                 # @modelcontextprotocol/inspector 
     volumes:                                        # Folder/file mappings
       - ./workspace:/home/coder/workspace/local     # Local folder → container
       - ./config:/home/coder/.config                # Local folder for config like passwords, so not at publish
